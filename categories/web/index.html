@@ -18,6 +18,8 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
@@ -289,8 +291,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/02/19/hello-world/" itemprop="url">
-            <span itemprop="name">Hexo - hello world</span>
+          <a class="post-title-link" href="/2021/02/19/hexo_tags/" itemprop="url">
+            <span itemprop="name">hexo个人博客下的分类和标签无法显示解决方法</span>
           </a>
       </div>
 
@@ -309,8 +311,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/02/19/hexo_tags/" itemprop="url">
-            <span itemprop="name">hexo个人博客下的分类和标签无法显示解决方法</span>
+          <a class="post-title-link" href="/2021/02/19/hello-world/" itemprop="url">
+            <span itemprop="name">Hexo - hello world</span>
           </a>
       </div>
 
@@ -376,6 +378,26 @@
 
 
 
+  <script>
+    NProgress.configure({
+      showSpinner: true
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
 
   
 

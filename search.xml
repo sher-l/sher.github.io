@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo个人博客下的分类和标签无法显示解决方法</title>
+    <url>/2021/02/19/hexo_tags/</url>
+    <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>你需要在hexo根目录的source文件夹下新建一个tags文件夹，然后在tags文件夹里面新建一个index.md文件。</p>
+<p>使用hexo快捷命令为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑index.md文件，内容如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">layout: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p><strong>重点来了</strong></p>
+<blockquote>
+<p>注意！这里面最重要的就是 layout 选项，后面的参数对应的是你主题文件夹 themes 下 layout 文件夹下第一级的布局文件。</p>
+<p>比如，我的主题是用ejs写的，那么对应的就是layout/tags.ejs，如果没有，那么就会出现空白的现象！<br>如果你的tags文件的命名时a.ejs，那么你就应该写成 layout: “a”。</p>
+</blockquote>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><p>编辑主题配置文件_config.yml</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">nav:</span><br><span class="line">  home: .</span><br><span class="line">  tags: tags</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="步骤四"><a href="#步骤四" class="headerlink" title="步骤四"></a>步骤四</h2><p>编辑hexo配置文件_config.yml 的 Directory选项。</p>
+<p>检查一下名称是否对应</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># Directory</span><br><span class="line">tag_dir: tags</span><br></pre></td></tr></table></figure>
+
+
+<p>至此，完美解决。</p>
+<p>最重要的就是看一下你的主题文件里有没有标签页或者分类页的布局文件，一般来说都是有的，只是命名和存放的位置可能不同，所以大家要根据实际情况来修改。</p>
+<blockquote>
+<p>参考：</p>
+<p>hexo 下的分类和表签无法显示，怎么解决？ - 虾哔哔的回答 - 知乎 <a href="https://www.zhihu.com/question/29017171/answer/364705653">https://www.zhihu.com/question/29017171/answer/364705653</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo - hello world</title>
     <url>/2021/02/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -39,44 +77,6 @@
 <blockquote>
 <p>参考：</p>
 <p><a href="https://blog.csdn.net/mqdxiaoxiao/article/details/93257866">https://blog.csdn.net/mqdxiaoxiao/article/details/93257866</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo个人博客下的分类和标签无法显示解决方法</title>
-    <url>/2021/02/19/hexo_tags/</url>
-    <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>你需要在hexo根目录的source文件夹下新建一个tags文件夹，然后在tags文件夹里面新建一个index.md文件。</p>
-<p>使用hexo快捷命令为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑index.md文件，内容如下：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">layout: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p><strong>重点来了</strong></p>
-<blockquote>
-<p>注意！这里面最重要的就是 layout 选项，后面的参数对应的是你主题文件夹 themes 下 layout 文件夹下第一级的布局文件。</p>
-<p>比如，我的主题是用ejs写的，那么对应的就是layout/tags.ejs，如果没有，那么就会出现空白的现象！<br>如果你的tags文件的命名时a.ejs，那么你就应该写成 layout: “a”。</p>
-</blockquote>
-<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><p>编辑主题配置文件_config.yml</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">nav:</span><br><span class="line">  home: .</span><br><span class="line">  tags: tags</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="步骤四"><a href="#步骤四" class="headerlink" title="步骤四"></a>步骤四</h2><p>编辑hexo配置文件_config.yml 的 Directory选项。</p>
-<p>检查一下名称是否对应</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># Directory</span><br><span class="line">tag_dir: tags</span><br></pre></td></tr></table></figure>
-
-
-<p>至此，完美解决。</p>
-<p>最重要的就是看一下你的主题文件里有没有标签页或者分类页的布局文件，一般来说都是有的，只是命名和存放的位置可能不同，所以大家要根据实际情况来修改。</p>
-<blockquote>
-<p>参考：</p>
-<p>hexo 下的分类和表签无法显示，怎么解决？ - 虾哔哔的回答 - 知乎 <a href="https://www.zhihu.com/question/29017171/answer/364705653">https://www.zhihu.com/question/29017171/answer/364705653</a></p>
 </blockquote>
 ]]></content>
       <categories>
