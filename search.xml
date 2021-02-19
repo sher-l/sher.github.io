@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo - hello world</title>
+    <url>/2021/02/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo个人博客NexT主题添加Local Search本地搜索</title>
+    <url>/2021/02/19/hexo_search/</url>
+    <content><![CDATA[<p><strong>添加本地自定义站点内容搜索，可以通过文字标题或文字内容关键字搜索出相应文章</strong></p>
+<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑站点配置文件，新增以下内容到任意位置：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  <span class="built_in">limit</span>: 10000</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><p>编辑主题配置文件，启用本地搜索功能：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/mqdxiaoxiao/article/details/93257866">https://blog.csdn.net/mqdxiaoxiao/article/details/93257866</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo个人博客下的分类和标签无法显示解决方法</title>
+    <url>/2021/02/19/hexo_tags/</url>
+    <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>你需要在hexo根目录的source文件夹下新建一个tags文件夹，然后在tags文件夹里面新建一个index.md文件。</p>
+<p>使用hexo快捷命令为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑index.md文件，内容如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">layout: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p><strong>重点来了</strong></p>
+<blockquote>
+<p>注意！这里面最重要的就是 layout 选项，后面的参数对应的是你主题文件夹 themes 下 layout 文件夹下第一级的布局文件。</p>
+<p>比如，我的主题是用ejs写的，那么对应的就是layout/tags.ejs，如果没有，那么就会出现空白的现象！<br>如果你的tags文件的命名时a.ejs，那么你就应该写成 layout: “a”。</p>
+</blockquote>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><p>编辑主题配置文件_config.yml</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">nav:</span><br><span class="line">  home: .</span><br><span class="line">  tags: tags</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="步骤四"><a href="#步骤四" class="headerlink" title="步骤四"></a>步骤四</h2><p>编辑hexo配置文件_config.yml 的 Directory选项。</p>
+<p>检查一下名称是否对应</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># Directory</span><br><span class="line">tag_dir: tags</span><br></pre></td></tr></table></figure>
+
+
+<p>至此，完美解决。</p>
+<p>最重要的就是看一下你的主题文件里有没有标签页或者分类页的布局文件，一般来说都是有的，只是命名和存放的位置可能不同，所以大家要根据实际情况来修改。</p>
+<blockquote>
+<p>参考：</p>
+<p>hexo 下的分类和表签无法显示，怎么解决？ - 虾哔哔的回答 - 知乎 <a href="https://www.zhihu.com/question/29017171/answer/364705653">https://www.zhihu.com/question/29017171/answer/364705653</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
