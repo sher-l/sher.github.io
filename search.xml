@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo个人博客备份</title>
-    <url>/2021/02/20/hexo-start/</url>
-    <content><![CDATA[<p>针对博客已经搭建并发布过文章。</p>
-<p>在你的博客仓库创建一个分支hexo（在框内输入即可创建，任意名称）</p>
-<p><img src="/2021/02/20/hexo-start/image-20210220152032368.png"></p>
-<p>将仓库master克隆到本地，把之前hexo文件夹的备份文件复制到仓库文件夹username.github.io中。</p>
-<p>注意：每个文件夹下如果有.git隐藏文件夹，则需删除否则无法上传该文件夹</p>
-<p>将该库push到hexo下即可完成备份。</p>
-<blockquote>
-<p>Hexo的源文件说明：<br> 1、<code>_config.yml</code>站点的配置文件，需要拷贝；<br> 2、<code>themes/</code>主题文件夹，需要拷贝；<br> 3、<code>source</code>博客文章的.md文件，需要拷贝；<br> 4、<code>scaffolds/</code>文章的模板，需要拷贝；<br> 5、<code>package.json</code>安装包的名称，需要拷贝；<br> 6、<code>.gitignore</code>限定在push时哪些文件可以忽略，需要拷贝；<br> 7、<code>.git/</code>主题和站点都有，标志这是一个git项目，不需要拷贝；<br> 8、<code>node_modules/</code>是安装包的目录，在执行npm install的时候会重新生成，不需要拷贝；<br> 9、<code>public</code>是hexo g生成的静态网页，不需要拷贝；<br> 10、<code>.deploy_git</code>同上，hexo g也会生成，不需要拷贝；<br> 11、<code>db.json</code>文件，不需要拷贝。</p>
-<p>不需要拷贝的文件正是.gitignore中所忽略的。</p>
-</blockquote>
-<p>这样做可以不建立那么多仓库，通过分支去管理，但由于我们本身通常是使用hexo d 去更新github.io，</p>
-<p>所以最好的办法还是新建一个仓库hexo，然后直接push到仓库，将网页和源文件分离，这个库还可以设置私有，会比上述的方式更好管理。</p>
-<p><strong>恢复</strong></p>
-<ol>
-<li>安装依赖软件</li>
-<li>使用克隆命令将仓库拷贝至本地</li>
-<li>在文件夹内执行命令npm install hexo-cli -g、npm install、npm install hexo-deployer-git</li>
-</ol>
-<blockquote>
-<p>参考：<a href="https://www.jianshu.com/p/baab04284923">https://www.jianshu.com/p/baab04284923</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo - hello world</title>
     <url>/2021/02/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -54,7 +22,7 @@
   </entry>
   <entry>
     <title>Hexo个人博客NexT主题添加Local Search本地搜索</title>
-    <url>/2021/02/19/hexo_search/</url>
+    <url>/2021/02/19/hexo-search/</url>
     <content><![CDATA[<p><strong>添加本地自定义站点内容搜索，可以通过文字标题或文字内容关键字搜索出相应文章</strong></p>
 <h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
@@ -82,7 +50,7 @@
   </entry>
   <entry>
     <title>hexo个人博客下的分类和标签无法显示解决方法</title>
-    <url>/2021/02/19/hexo_tags/</url>
+    <url>/2021/02/19/hexo-tags/</url>
     <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>你需要在hexo根目录的source文件夹下新建一个tags文件夹，然后在tags文件夹里面新建一个index.md文件。</p>
 <p>使用hexo快捷命令为：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
@@ -109,6 +77,38 @@
 <blockquote>
 <p>参考：</p>
 <p>hexo 下的分类和表签无法显示，怎么解决？ - 虾哔哔的回答 - 知乎 <a href="https://www.zhihu.com/question/29017171/answer/364705653">https://www.zhihu.com/question/29017171/answer/364705653</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo个人博客备份</title>
+    <url>/2021/02/20/hexo-start/</url>
+    <content><![CDATA[<p>针对博客已经搭建并发布过文章。</p>
+<p>在你的博客仓库创建一个分支hexo（在框内输入即可创建，任意名称）</p>
+<p><img src="/2021/02/20/hexo-start/image-20210220152032368.png"></p>
+<p>将仓库master克隆到本地，把之前hexo文件夹的备份文件复制到仓库文件夹username.github.io中。</p>
+<p>注意：每个文件夹下如果有.git隐藏文件夹，则需删除否则无法上传该文件夹</p>
+<p>将该库push到hexo下即可完成备份。</p>
+<blockquote>
+<p>Hexo的源文件说明：<br> 1、<code>_config.yml</code>站点的配置文件，需要拷贝；<br> 2、<code>themes/</code>主题文件夹，需要拷贝；<br> 3、<code>source</code>博客文章的.md文件，需要拷贝；<br> 4、<code>scaffolds/</code>文章的模板，需要拷贝；<br> 5、<code>package.json</code>安装包的名称，需要拷贝；<br> 6、<code>.gitignore</code>限定在push时哪些文件可以忽略，需要拷贝；<br> 7、<code>.git/</code>主题和站点都有，标志这是一个git项目，不需要拷贝；<br> 8、<code>node_modules/</code>是安装包的目录，在执行npm install的时候会重新生成，不需要拷贝；<br> 9、<code>public</code>是hexo g生成的静态网页，不需要拷贝；<br> 10、<code>.deploy_git</code>同上，hexo g也会生成，不需要拷贝；<br> 11、<code>db.json</code>文件，不需要拷贝。</p>
+<p>不需要拷贝的文件正是.gitignore中所忽略的。</p>
+</blockquote>
+<p>这样做可以不建立那么多仓库，通过分支去管理，但由于我们本身通常是使用hexo d 去更新github.io，</p>
+<p>所以最好的办法还是新建一个仓库hexo，然后直接push到仓库，将网页和源文件分离，这个库还可以设置私有，会比上述的方式更好管理。</p>
+<p><strong>恢复</strong></p>
+<ol>
+<li>安装依赖软件</li>
+<li>使用克隆命令将仓库拷贝至本地</li>
+<li>在文件夹内执行命令npm install hexo-cli -g、npm install、npm install hexo-deployer-git</li>
+</ol>
+<blockquote>
+<p>参考：<a href="https://www.jianshu.com/p/baab04284923">https://www.jianshu.com/p/baab04284923</a></p>
 </blockquote>
 ]]></content>
       <categories>
