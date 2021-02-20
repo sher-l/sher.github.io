@@ -92,22 +92,23 @@
     <content><![CDATA[<p>针对博客已经搭建并发布过文章。</p>
 <p>在你的博客仓库创建一个分支hexo（在框内输入即可创建，任意名称）<br><img src="/.io//image-20210220152032368.png" alt="hexo_start"></p>
 <p>将仓库master克隆到本地，把之前hexo文件夹的备份文件复制到仓库文件夹username.github.io中。</p>
-<p>以下为主要备份文件</p>
-<p><code>_config.yml</code>，hexo设置</p>
-<p><code>themes/</code>，主题文件夹</p>
-<p><code>source/</code>，已发布的文章</p>
-<p><code>scffolds/</code>，文章模板</p>
-<p><code>package.json</code>，hexo配置文件</p>
-<p><code>.gitignore</code>，git上传忽略配置</p>
 <p>注意：每个文件夹下如果有.git隐藏文件夹，则需删除否则无法上传该文件夹</p>
 <p>将该库push到hexo下即可完成备份。</p>
+<blockquote>
+<p>Hexo的源文件说明：<br> 1、<code>_config.yml</code>站点的配置文件，需要拷贝；<br> 2、<code>themes/</code>主题文件夹，需要拷贝；<br> 3、<code>source</code>博客文章的.md文件，需要拷贝；<br> 4、<code>scaffolds/</code>文章的模板，需要拷贝；<br> 5、<code>package.json</code>安装包的名称，需要拷贝；<br> 6、<code>.gitignore</code>限定在push时哪些文件可以忽略，需要拷贝；<br> 7、<code>.git/</code>主题和站点都有，标志这是一个git项目，不需要拷贝；<br> 8、<code>node_modules/</code>是安装包的目录，在执行npm install的时候会重新生成，不需要拷贝；<br> 9、<code>public</code>是hexo g生成的静态网页，不需要拷贝；<br> 10、<code>.deploy_git</code>同上，hexo g也会生成，不需要拷贝；<br> 11、<code>db.json</code>文件，不需要拷贝。</p>
+<p>不需要拷贝的文件正是.gitignore中所忽略的。</p>
+</blockquote>
+<p>这样做可以不建立那么多仓库，通过分支去管理，但由于我们本身通常是使用hexo d 去更新github.io，</p>
+<p>所以最好的办法还是新建一个仓库hexo，然后直接push到仓库，将网页和源文件分离，这个库还可以设置私有，会比上述的方式更好管理。</p>
 <p><strong>恢复</strong></p>
 <ol>
 <li>安装依赖软件</li>
 <li>使用克隆命令将仓库拷贝至本地</li>
 <li>在文件夹内执行命令npm install hexo-cli -g、npm install、npm install hexo-deployer-git</li>
 </ol>
-<p>（也有其他需要安装的命令比如本地搜索：npm install hexo-generator-searchdb ）</p>
+<blockquote>
+<p>参考：<a href="https://www.jianshu.com/p/baab04284923">https://www.jianshu.com/p/baab04284923</a></p>
+</blockquote>
 ]]></content>
       <categories>
         <category>web</category>
