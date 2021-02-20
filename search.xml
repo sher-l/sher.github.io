@@ -5,7 +5,7 @@
     <url>/2021/02/20/hexo-image/</url>
     <content><![CDATA[<p>关于hexo插入图片不显示</p>
 <p><a href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
-<p><img src="/2021/02/20/hexo-image/image-20210220171543240.png" alt="hexo-image"></p>
+<p><img src="/2021/02/20/hexo-image/image-20210220171543240.png"></p>
 ]]></content>
   </entry>
   <entry>
