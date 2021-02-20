@@ -5,7 +5,7 @@
     <url>/2021/02/19/hexo_tags/</url>
     <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>你需要在hexo根目录的source文件夹下新建一个tags文件夹，然后在tags文件夹里面新建一个index.md文件。</p>
 <p>使用hexo快捷命令为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 <h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑index.md文件，内容如下：</p>
@@ -63,7 +63,7 @@
     <url>/2021/02/19/hexo_search/</url>
     <content><![CDATA[<p><strong>添加本地自定义站点内容搜索，可以通过文字标题或文字内容关键字搜索出相应文章</strong></p>
 <h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑站点配置文件，新增以下内容到任意位置：</p>
@@ -78,6 +78,36 @@
 <p>参考：</p>
 <p><a href="https://blog.csdn.net/mqdxiaoxiao/article/details/93257866">https://blog.csdn.net/mqdxiaoxiao/article/details/93257866</a></p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo个人博客备份</title>
+    <url>/2021/02/20/hexo_start/</url>
+    <content><![CDATA[<p>针对博客已经搭建并发布过文章。</p>
+<p>在你的博客仓库创建一个分支hexo（在框内输入即可创建，任意名称）<br><img src="/.io//image-20210220152032368.png" alt="hexo_start"></p>
+<p>将仓库master克隆到本地，把之前hexo文件夹的备份文件复制到仓库文件夹username.github.io中。</p>
+<p>以下为主要备份文件</p>
+<p><code>_config.yml</code>，hexo设置</p>
+<p><code>themes/</code>，主题文件夹</p>
+<p><code>source/</code>，已发布的文章</p>
+<p><code>scffolds/</code>，文章模板</p>
+<p><code>package.json</code>，hexo配置文件</p>
+<p><code>.gitignore</code>，git上传忽略配置</p>
+<p>注意：每个文件夹下如果有.git隐藏文件夹，则需删除否则无法上传该文件夹</p>
+<p>将该库push到hexo下即可完成备份。</p>
+<p><strong>恢复</strong></p>
+<ol>
+<li>安装依赖软件</li>
+<li>使用克隆命令将仓库拷贝至本地</li>
+<li>在文件夹内执行命令npm install hexo-cli -g、npm install、npm install hexo-deployer-git</li>
+</ol>
+<p>（也有其他需要安装的命令比如本地搜索：npm install hexo-generator-searchdb ）</p>
 ]]></content>
       <categories>
         <category>web</category>
