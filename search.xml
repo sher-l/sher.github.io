@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/2021/02/20/hexo-image/</url>
+    <content><![CDATA[<p>关于hexo插入图片不显示</p>
+<p><a href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
+<p><img src="/2021/02/20/hexo-image/image-20210220171543240.png" alt="hexo-image"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo - hello world</title>
     <url>/2021/02/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -117,13 +125,5 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2021/02/20/hexo-image/</url>
-    <content><![CDATA[<p>关于hexo插入图片不显示</p>
-<p><a href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
-<p><img src="/image-20210220171543240.png" alt="image-20210220171543240"></p>
-]]></content>
   </entry>
 </search>
