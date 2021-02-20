@@ -88,9 +88,10 @@
   </entry>
   <entry>
     <title>hexo个人博客备份</title>
-    <url>/2021/02/20/hexo_start/</url>
+    <url>/2021/02/20/hexo-start/</url>
     <content><![CDATA[<p>针对博客已经搭建并发布过文章。</p>
-<p>在你的博客仓库创建一个分支hexo（在框内输入即可创建，任意名称）<br><img src="/.io//image-20210220152032368.png"></p>
+<p>在你的博客仓库创建一个分支hexo（在框内输入即可创建，任意名称）</p>
+<p><img src="/.io//02/20/hexo-start/image-20210220152032368.png"></p>
 <p>将仓库master克隆到本地，把之前hexo文件夹的备份文件复制到仓库文件夹username.github.io中。</p>
 <p>注意：每个文件夹下如果有.git隐藏文件夹，则需删除否则无法上传该文件夹</p>
 <p>将该库push到hexo下即可完成备份。</p>
