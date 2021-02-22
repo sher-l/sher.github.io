@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/2021/02/20/hexo-image/</url>
-    <content><![CDATA[<p>关于hexo插入图片不显示</p>
-<p><a href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
-<p><img src="/2021/02/20/hexo-image/image-20210220171543240.png"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo - hello world</title>
     <url>/2021/02/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -29,11 +21,47 @@
       </tags>
   </entry>
   <entry>
+    <title>关于hexo插入图片不显示</title>
+    <url>/2021/02/20/hexo-image/</url>
+    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
+<p><img src="/2021/02/20/hexo-image/image-20210220171543240.png"></p>
+<p>在makedown下不显示，在本地以及线上端才可以看到内容</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hexo免密码部署到github</title>
+    <url>/2021/02/20/hexo-nopasswd/</url>
+    <content><![CDATA[<h2 id="1-设置SSH"><a href="#1-设置SSH" class="headerlink" title="1.设置SSH"></a>1.设置SSH</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh  <span class="comment"># Checks to see if there is a directory named &quot;.ssh&quot; in your user directory 如果已经存在id_rsa、id_rsa.pub，证明这台电脑已经创建有密钥了，可以不用再ssh-keygen生成一次。</span></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;anything&quot;</span> <span class="comment">#这个anything只是一个标记，名字随便取，不一定是要邮箱，国内大部分的教程都是直接copy。。。</span></span><br><span class="line"></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/you/.ssh/id_rsa): </span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br><span class="line"><span class="comment">#这里直接回车跳过就好</span></span><br><span class="line"></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/you/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/you/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">…………………此处是密钥内容…………………… anything</span><br><span class="line"><span class="comment">#然后密钥就生成完毕</span></span><br></pre></td></tr></table></figure>
+<p>使用 <code>ssh-kengen</code> 会在<code>~/.ssh/</code>目录下生成两个文件，不指定文件名和密钥类型的时候，默认生成的两个文件是：</p>
+<p><code>id_rsa</code><br><code>id_rsa.pub</code><br>第一个是私钥文件，第二个是公钥文件。</p>
+<h2 id="设置-Github-项目的-Deploy-keys"><a href="#设置-Github-项目的-Deploy-keys" class="headerlink" title="设置 Github 项目的 Deploy keys"></a>设置 Github 项目的 Deploy keys</h2><p>可以选择是在用户设置中添加密钥<strong>Settings –&gt; SSH GPG keys</strong>，<br>还是单个项目中添加密钥<strong>Settings –&gt;Deploy keys –&gt; Add deploy key</strong>，<br>在这里我们主要是为单个项目添加密钥。</p>
+<p>在 <u>username.github.io</u> 的首页菜单栏中点击 Settings –&gt; Deploy keys –&gt; Add deploy key，然后将生成的 <code>id_rsa.pub</code> 中的内容全选复制到 key 输入框中，然后点击 Add key 完成添加公钥。</p>
+<p>注意修改hexo 的配置文件 <code>_config.yml</code> 中的 deploy 属性。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: git@github.com:username&#x2F;username.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><blockquote>
+<p>每次生成密钥，看到国内的博客，都要求输入邮箱。但不知道意义何在。</p>
+<p>后来在stackOverFlow上看到这个答案。</p>
+<p>The email is only optional field to identify the key.<br>邮箱仅仅是识别用的key</p>
+<p>When you create the ssh you type (for example):<br>ssh-keygen -t rsa -C “any comment can be here”<br>当你创建ssh的时候</p>
+<p>-t = The type of the key to generate<br>密钥的类型<br>-C = comment to identify the key<br>用于识别这个密钥的注释<br>So the Comment is for you only and you can put anything inside.<br>Many sites and software are using this comment as the key name.<br>所以这个注释你可以输入任何内容，很多网站和软件用这个注释作为密钥的名字。</p>
+<p>引用链接：</p>
+<p><a href="https://blog.csdn.net/aijava1/article/details/99622416">ssh-keygen的-C后面的邮箱有什么用？</a></p>
+<p><a href="https://www.cnblogs.com/xunzhiyou/p/12117261.html">ssh-keygen -t rsa -C “content” 解释</a></p>
+<p>关于 ssh-keygen 更多参见：<a href="https://www.liaohuqiu.net/cn/posts/ssh-keygen-abc/">ssh-keygen基本用法</a></p>
+<p>关于 ssh 参数更多参见：<a href="https://www.iteye.com/blog/killer-jok-1853451">ssh-keygen参数说明</a></p>
+<p>而且这个注释其实就在 ~.ssh\id_rsa.pub 文本内容末尾。</p>
+<p>其实到这里会发现，SSH 并不是 git 的命令。在 windows 下安装 git for windows 时，顺带一起安装了MSysGit，并提供了SSH软件包（参见git说明文档——<a href="https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5">服务器上的 Git - 生成 SSH 公钥</a>）。ssh-keygen - t rsa -C “your content” 中的 “your content” 也与 git 用户名和邮箱没有任何关系。</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo个人博客NexT主题添加Local Search本地搜索</title>
     <url>/2021/02/19/hexo-search/</url>
     <content><![CDATA[<p><strong>添加本地自定义站点内容搜索，可以通过文字标题或文字内容关键字搜索出相应文章</strong></p>
 <h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑站点配置文件，新增以下内容到任意位置：</p>
@@ -61,7 +89,7 @@
     <url>/2021/02/19/hexo-tags/</url>
     <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>你需要在hexo根目录的source文件夹下新建一个tags文件夹，然后在tags文件夹里面新建一个index.md文件。</p>
 <p>使用hexo快捷命令为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 <h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑index.md文件，内容如下：</p>
@@ -124,6 +152,29 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用的工具及软件</title>
+    <url>/2021/02/22/tools/</url>
+    <content><![CDATA[<p>总结备份一下常用的工具及软件，还有一些好用的网站。</p>
+<h2 id="quicker"><a href="#quicker" class="headerlink" title="quicker"></a>quicker</h2><p>更多鼠标方式、键盘操作与键鼠结合，为最常用的软件或资源建立捷径，</p>
+<p>还有十分强大的动作库（翻译、识图等等），非常趁手的、提升效率的工具。</p>
+<p><a href="https://getquicker.net/">https://getquicker.net/</a></p>
+<h2 id="everything"><a href="#everything" class="headerlink" title="everything"></a>everything</h2><p>everything能够基于文件名快速定文件和文件夹位置。</p>
+<p>设置快捷键激活\结合quicker一起使用十分方便。</p>
+<p><img src="/2021/02/22/tools/image-20210222113433188.png"></p>
+<p><a href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
+<h2 id="ditto"><a href="#ditto" class="headerlink" title="ditto"></a>ditto</h2><p>剪贴板管理器，自动保存你复制过的内容。</p>
+<p><a href="https://ditto-cp.sourceforge.io/">https://ditto-cp.sourceforge.io/</a></p>
+<h2 id="snipaste"><a href="#snipaste" class="headerlink" title="snipaste"></a>snipaste</h2><p>强大的截图工具，最好用的点在于可以直接贴图至屏幕，方便对照对比。（也可以多图）</p>
+<p><a href="https://www.snipaste.com/">https://www.snipaste.com/</a></p>
+]]></content>
+      <categories>
+        <category>software</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
       </tags>
   </entry>
 </search>
