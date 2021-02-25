@@ -177,4 +177,49 @@
         <tag>软件</tag>
       </tags>
   </entry>
+  <entry>
+    <title>daily-20210225</title>
+    <url>/2021/02/25/daily-20210225/</url>
+    <content><![CDATA[<p>本来创建一个blog是为了记录自己学习日记以及一些遇到问题时候的解决方案，</p>
+<p>但结果自己还是有点三分钟热度了，鼓捣了两天就不继续写了。</p>
+<p>还是要养成习惯， 不说每天，起码一周2-3篇吧，持续学习持续进步。</p>
+<p>虽然我一直以来的观念都是人生苦短、及时行乐，</p>
+<p>但随着人的成长，很多事情不是自己不去理会它就不存在的，</p>
+<p>生活的琐事柴米油盐，工作的烦心事等，很大一部分是需要金钱、地位去改变的。</p>
+<p>而一介平民解决这些事情的最好的办法就是自我增值。</p>
+<p>虽然还是偶尔会沉迷游戏，但还是尽量为了自己成为更好的自己吧。</p>
+<p>加油。</p>
+]]></content>
+      <categories>
+        <category>daily</category>
+      </categories>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Python</title>
+    <url>/2021/02/25/python/</url>
+    <content><![CDATA[<blockquote>
+<p>记录一些常用到的python库、python用法等等与python相关的知识。</p>
+</blockquote>
+<h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><p>说到python库，除了自带的os、sys经常用到以外，pandas是日常工作中经常会用到的一个第三方库。</p>
+<blockquote>
+<p>用到的我才会记下来</p>
+</blockquote>
+<h3 id="合并表格"><a href="#合并表格" class="headerlink" title="合并表格"></a>合并表格</h3><h5 id="pandas-concat-、pandas-merge"><a href="#pandas-concat-、pandas-merge" class="headerlink" title="pandas.concat()         、pandas.merge()"></a><code>pandas.concat()         </code>、<code>pandas.merge()</code></h5><blockquote>
+<p>作用说明：<br><code>pandas.concat()</code>是按照某行或某列来合并，而是按照数据中具体的”某一字段”来连接数据。<br><code>pandas.merge()</code>是pandas中用来”合并”数据的函数，有点想excel中的vlookup()函数</p>
+</blockquote>
+<h5 id="pandas-concat"><a href="#pandas-concat" class="headerlink" title="pandas.concat()"></a>pandas.concat()</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">pd.read_table(<span class="string">&quot;example.txt&quot;</span>) <span class="comment">#读文件的一种方式,还有pd.read_csv等.</span></span><br><span class="line">pd.concat(d1,d2) <span class="comment">#直接合并两个表格,两个表的字段需要一致,当然也可以定义.</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">参数一览</span></span><br><span class="line"><span class="string">objs:</span></span><br><span class="line"><span class="string">需要合并的dataframe,以&#x27;,&#x27;分隔.</span></span><br><span class="line"><span class="string">估计是可以多个表不过我没去实验过.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">axis:</span></span><br><span class="line"><span class="string">默认为axis=0.</span></span><br><span class="line"><span class="string">代表需要合并链接的轴,0为行,1为列.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">join:</span></span><br><span class="line"><span class="string">默认为join=&#x27;outer&#x27;.</span></span><br><span class="line"><span class="string">代表合并的方式,&#x27;outer&#x27;为并集,&#x27;inner&#x27;则为交集.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">ignore_index:</span></span><br><span class="line"><span class="string">默认为ignore_index=False.</span></span><br><span class="line"><span class="string">如果两个表的index没有意义或者用不上,则该参数可以改为True,忽视表头.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">一般常用的参数就这么多,其他的就暂且不提.</span></span><br><span class="line"><span class="string">pd.concat(objs, axis=0, join=&#x27;outer&#x27;, join_axes=None, ignore_index=False,keys=None, levels=None, names=None, verify_integrity=False)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">这里讲得很详细.</span></span><br><span class="line"><span class="string">https://zhuanlan.zhihu.com/p/132593960</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#下面是一个简单的提取nr注释信息然后与refgene.fasta结合得到genome.des.gene的一个工作代码</span></span><br><span class="line"><span class="comment">#当然输入文件中的blast_nr已经是处理过的blast结果.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> sys,os</span><br><span class="line">refgene=sys.argv[<span class="number">1</span>]</span><br><span class="line">blast_nr=sys.argv[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">os.system(<span class="string">&quot;echo geneid&#x27;\t&#x27;symbol&#x27;\t&#x27;description &gt;blast_tmp&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;awk -F &#x27;\t&#x27; &#x27;&#123;print $1\&quot;\t\&quot;$3\&quot;\t\&quot;$NF&#125;&#x27; %s |sed &#x27;/Hit1_description/d&#x27; &gt;&gt; blast_tmp &quot;</span>%blast_nr)</span><br><span class="line">os.system(<span class="string">&quot;echo geneid&#x27;\t&#x27;symbol&#x27;\t&#x27;description &gt;refgene_tmp&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;grep &#x27;&gt;&#x27; %s |awk -F &#x27;&gt;&#x27; &#x27;&#123;print $2\&quot;\t\&quot;$2\&quot;\t-\&quot;&#125;&#x27; &gt;&gt;refgene_tmp &quot;</span>%refgene)</span><br><span class="line"></span><br><span class="line">d1=pd.read_table(<span class="string">&#x27;refgene_tmp&#x27;</span>)</span><br><span class="line">d2=pd.read_table(<span class="string">&#x27;blast_tmp&#x27;</span>)</span><br><span class="line">d3=pd.concat([d1,d2]).sort_values(by=[<span class="string">&#x27;geneid&#x27;</span>,<span class="string">&#x27;description&#x27;</span>],ascending =[<span class="literal">False</span>,<span class="literal">False</span>])</span><br><span class="line">d4=d3.drop_duplicates(<span class="string">&#x27;geneid&#x27;</span>)</span><br><span class="line">d5=d4.sort_index()</span><br><span class="line">d5.to_csv(<span class="string">&quot;genome.des.gene&quot;</span>,sep=<span class="string">&#x27;\t&#x27;</span>,index=<span class="literal">False</span>)</span><br><span class="line">os.system(<span class="string">&quot;rm refgene_tmp blast_tmp&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="pandas-merge"><a href="#pandas-merge" class="headerlink" title="pandas.merge()"></a>pandas.merge()</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pandas.merge()</span><br><span class="line">用得少,可参考:</span><br><span class="line">https://blog.csdn.net/u013019431/article/details/<span class="number">79949648</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>
