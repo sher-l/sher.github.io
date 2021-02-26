@@ -226,7 +226,7 @@
       </tags>
   </entry>
   <entry>
-    <title>bio-tools</title>
+    <title>Seqkit</title>
     <url>/2021/02/26/bio-tools/</url>
     <content><![CDATA[<h2 id="seqkit"><a href="#seqkit" class="headerlink" title="seqkit"></a>seqkit</h2><h4 id="软件的介绍"><a href="#软件的介绍" class="headerlink" title="软件的介绍"></a>软件的介绍</h4><p>SeqKit是一种跨平台的、极快的，全面的fasta/q处理工具。SeqKit为所有的主流操作系统提供了一种可执行的双元文件，包括Windows，Linux，Mac OS X，并且不依赖于任何的配置或预先配置就可以直接使用。</p>
 <h4 id="软件的安装"><a href="#软件的安装" class="headerlink" title="软件的安装"></a>软件的安装</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#install by conda</span></span><br><span class="line">conda install -c bioconda seqkit</span><br><span class="line"></span><br><span class="line"><span class="comment">#https://bioinf.shenwei.me/seqkit/</span></span><br><span class="line"><span class="comment">#https://github.com/shenwei356/seqkit</span></span><br></pre></td></tr></table></figure>
@@ -245,5 +245,11 @@
 <p>参考:<br><a href="https://www.jianshu.com/p/c40a69d2bdc8">https://www.jianshu.com/p/c40a69d2bdc8</a><br><a href="https://www.jianshu.com/p/1bfcea76ef47?utm_campaign=haruki">https://www.jianshu.com/p/1bfcea76ef47?utm_campaign=haruki</a></p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>Bio-tools</category>
+      </categories>
+      <tags>
+        <tag>Bio-tools</tag>
+      </tags>
   </entry>
 </search>
