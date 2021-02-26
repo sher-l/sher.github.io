@@ -26,21 +26,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"sher-l.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"left","width":255,"display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="添加本地自定义站点内容搜索，可以通过文字标题或文字内容关键字搜索出相应文章 步骤一安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1$ npm install hexo-generator-searchdb   步骤二">
+<meta name="description" content="seqkit软件的介绍SeqKit是一种跨平台的、极快的，全面的fasta&#x2F;q处理工具。SeqKit为所有的主流操作系统提供了一种可执行的双元文件，包括Windows，Linux，Mac OS X，并且不依赖于任何的配置或预先配置就可以直接使用。 软件的安装12345#install by condaconda install -c bioconda seqkit#https:&#x2F;&#x2F;bioinf.s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo个人博客NexT主题添加Local Search本地搜索">
-<meta property="og:url" content="https://sher-l.github.io/2021/02/19/hexo-search/index.html">
+<meta property="og:title" content="bio-tools">
+<meta property="og:url" content="https://sher-l.github.io/2021/02/26/bio-tools/index.html">
 <meta property="og:site_name" content="Sher">
-<meta property="og:description" content="添加本地自定义站点内容搜索，可以通过文字标题或文字内容关键字搜索出相应文章 步骤一安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1$ npm install hexo-generator-searchdb   步骤二">
+<meta property="og:description" content="seqkit软件的介绍SeqKit是一种跨平台的、极快的，全面的fasta&#x2F;q处理工具。SeqKit为所有的主流操作系统提供了一种可执行的双元文件，包括Windows，Linux，Mac OS X，并且不依赖于任何的配置或预先配置就可以直接使用。 软件的安装12345#install by condaconda install -c bioconda seqkit#https:&#x2F;&#x2F;bioinf.s">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-19T08:43:13.000Z">
-<meta property="article:modified_time" content="2021-02-22T03:12:44.913Z">
+<meta property="article:published_time" content="2021-02-26T06:55:29.000Z">
+<meta property="article:modified_time" content="2021-02-26T07:12:46.385Z">
 <meta property="article:author" content="Sher">
-<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://sher-l.github.io/2021/02/19/hexo-search/">
+<link rel="canonical" href="https://sher-l.github.io/2021/02/26/bio-tools/">
 
 
 <script data-pjax class="page-configurations">
@@ -52,7 +51,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>Hexo个人博客NexT主题添加Local Search本地搜索 | Sher</title>
+<title>bio-tools | Sher</title>
   
 
 
@@ -189,7 +188,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">步骤一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">步骤二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89"><span class="nav-number">3.</span> <span class="nav-text">步骤三</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#seqkit"><span class="nav-number">1.</span> <span class="nav-text">seqkit</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.0.1.</span> <span class="nav-text">软件的介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">1.0.2.</span> <span class="nav-text">软件的安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.0.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">1.0.4.</span> <span class="nav-text">软件的命令</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -295,7 +294,7 @@ setInterval(function(){
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sher-l.github.io/2021/02/19/hexo-search/">
+    <link itemprop="mainEntityOfPage" href="https://sher-l.github.io/2021/02/26/bio-tools/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -308,7 +307,7 @@ setInterval(function(){
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo个人博客NexT主题添加Local Search本地搜索
+          bio-tools
         </h1>
 
         <div class="post-meta-container">
@@ -318,24 +317,9 @@ setInterval(function(){
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-02-19 16:43:13" itemprop="dateCreated datePublished" datetime="2021-02-19T16:43:13+08:00">2021-02-19</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-22 11:12:44" itemprop="dateModified" datetime="2021-02-22T11:12:44+08:00">2021-02-22</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
-        </span>
+      <time title="创建时间：2021-02-26 14:55:29 / 修改时间：15:12:46" itemprop="dateCreated datePublished" datetime="2021-02-26T14:55:29+08:00">2021-02-26</time>
     </span>
 
   
@@ -362,22 +346,21 @@ setInterval(function(){
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><strong>添加本地自定义站点内容搜索，可以通过文字标题或文字内容关键字搜索出相应文章</strong></p>
-<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a><strong>步骤一</strong></h2><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑站点配置文件，新增以下内容到任意位置：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  <span class="built_in">limit</span>: 10000</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><p>编辑主题配置文件，启用本地搜索功能：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
+        <h2 id="seqkit"><a href="#seqkit" class="headerlink" title="seqkit"></a>seqkit</h2><h4 id="软件的介绍"><a href="#软件的介绍" class="headerlink" title="软件的介绍"></a>软件的介绍</h4><p>SeqKit是一种跨平台的、极快的，全面的fasta/q处理工具。SeqKit为所有的主流操作系统提供了一种可执行的双元文件，包括Windows，Linux，Mac OS X，并且不依赖于任何的配置或预先配置就可以直接使用。</p>
+<h4 id="软件的安装"><a href="#软件的安装" class="headerlink" title="软件的安装"></a>软件的安装</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#install by conda</span></span><br><span class="line">conda install -c bioconda seqkit</span><br><span class="line"></span><br><span class="line"><span class="comment">#https://bioinf.shenwei.me/seqkit/</span></span><br><span class="line"><span class="comment">#https://github.com/shenwei356/seqkit</span></span><br></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="软件的命令"><a href="#软件的命令" class="headerlink" title="软件的命令"></a>软件的命令</h4><p><strong>最常用的命令:</strong></p>
+<p><strong>#将fataq文件转化为fasta格式.</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;seqkit seq fq2fa test.fq -o test.fa</span><br></pre></td></tr></table></figure>
+<p><strong>#将多行序列转换为一行序列</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seqkit seq test.fa -w 0 &gt; test_w.fa</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>参考：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mqdxiaoxiao/article/details/93257866">https://blog.csdn.net/mqdxiaoxiao/article/details/93257866</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;<span class="comment">## 序列和子序列</span></span><br><span class="line">&gt;seq  转换序列（序列颠倒，序列互补，提取ID）</span><br><span class="line">&gt;subseq 从区域/gtf/bed中获得序列，包括侧面的序列</span><br><span class="line">&gt;sliding 滑动序列，支持环式基因组</span><br><span class="line">&gt;stats   对FASTA/Q files进行简单统计</span><br><span class="line">&gt;faidx 创造fasta索引文件并提取子序列</span><br><span class="line">&gt;watch 检测并连线序列特点的柱状图</span><br><span class="line">&gt;sana 清除质量不好的单线的fastq文件</span><br><span class="line">&gt;<span class="comment">## 格式转换</span></span><br><span class="line">&gt;fx2tab  将FASTA/Q 文件转变成表格形式 (1th: name/ID, 2nd: sequence, 3rd: quality)</span><br><span class="line">&gt;tab2fx 转变表格形式为fasta/q格式</span><br><span class="line">&gt;fq2fa 转变fastq文件为fasta文件</span><br><span class="line">&gt;convert 在Sanger, Solexa and Illumina中转换fastq的质量编码</span><br><span class="line">&gt;translate 将DNA/RNA序列转变成蛋白序列（支持模棱两可的碱基）</span><br><span class="line">&gt;<span class="comment">## 搜索</span></span><br><span class="line">&gt;grep 根据ID/名称/序列/序列motif 搜索序列，且允许错配</span><br><span class="line">&gt;locate 定位子序列/motif,且允许错配</span><br><span class="line">&gt;fish 使用本地比对在较大序列中寻找短序列</span><br><span class="line">&gt;amplicon 经由引物检索扩增子（或它附近特定的区域）</span><br><span class="line">&gt;<span class="comment">## bam文件的处理和监视</span></span><br><span class="line">&gt;bam 监视和连线bam文件记录特点的直方图</span><br><span class="line">&gt;<span class="comment">## 设置参数</span></span><br><span class="line">&gt;head 打印第一个Nfasta/q的记录</span><br><span class="line">&gt;range 在一个范围内（start:end）打印fasta/q的记录</span><br><span class="line">&gt;sample 通过数量或比例来体验序列</span><br><span class="line">&gt;rmdup 通过id/名称/序列 来去除复制的序列</span><br><span class="line">&gt;duplicate  复制N次的序列</span><br><span class="line">&gt;common 通过id/名称/序列 发现多条序列中共有的序列</span><br><span class="line">&gt;split 通过id/seq region/size/parts (mainly <span class="keyword">for</span> FASTA) 将序列劈开成文件</span><br><span class="line">&gt;split2 将序列通过大小或部分 劈开成文件</span><br><span class="line">&gt;<span class="comment">## 编辑</span></span><br><span class="line">&gt;replace 通过规律表达来代替名字或序列</span><br><span class="line">&gt;rename 重新命名复制的ID</span><br><span class="line">&gt;restart 为环状基因组重新设置起始位置</span><br><span class="line">&gt;concat 从多个文件中经由相同的ID来连接序列</span><br><span class="line">&gt;mutate 编辑序列（点突，插入，删除）</span><br><span class="line">&gt;<span class="comment">## 排序</span></span><br><span class="line">&gt;shuffle 变换序列位置</span><br><span class="line">&gt;sort 将序列经由id/name/sequence 进行排序</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>其他常用命令:</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取反向序列</span></span><br><span class="line">seqkit seq test.fa -r &gt; test_re.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#取互补序列</span></span><br><span class="line">seq test.fa -p &gt; test_com.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#取反向互补序列</span></span><br><span class="line">seqkit seq test.fa -r -p &gt; test_re_com.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#DNA序列转换为RNA序列</span></span><br><span class="line">seqkit seq test.fa --nda2rna &gt; test_rna.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#RNA序列转换为DNA序列</span></span><br><span class="line">seqkit seq test.fa rna2dna &gt; test_dna.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#将序列以小写字母的形式输出</span></span><br><span class="line">seqkit seq test.fa -l &gt; test_lower.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#将序列以大写字母的形式输出</span></span><br><span class="line">seqkit seq test.fa -u &gt; test_upper.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定每行序列的输出长度(为0的话，代表为一整行，默认的输出 长度是60个碱基)</span></span><br><span class="line">seqkit seq test.fa -w 10 &gt; test_10.fa (指定序列的长度为10)</span><br><span class="line"></span><br><span class="line"><span class="comment">#将多行序列转换为一行序列</span></span><br><span class="line">seqkit seq test.fa -w 0 &gt; test_w.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#只输出序列</span></span><br><span class="line">seqkit seq test.fa -s -w 0 &gt; test_seq.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#将只输出的序列的，指定每行输出的碱基数</span></span><br><span class="line">seqkit seq test_seq.fa -s -w 40 &gt; test_seq40.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#将fataq文件转化为fasta格式.</span></span><br><span class="line">seqkit seq fq2fa test.fq -o test.fa</span><br><span class="line"></span><br><span class="line"><span class="comment">#将fasta格式转化为tab格式</span></span><br><span class="line">seqkit fx2tab test.fa &gt; test_tab.fa (没有seq参数)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考:<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c40a69d2bdc8">https://www.jianshu.com/p/c40a69d2bdc8</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1bfcea76ef47?utm_campaign=haruki">https://www.jianshu.com/p/1bfcea76ef47?utm_campaign=haruki</a></p>
 </blockquote>
 
     </div>
@@ -387,22 +370,16 @@ setInterval(function(){
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/02/19/hello-world/" rel="prev" title="Hexo - hello world">
-                  <i class="fa fa-chevron-left"></i> Hexo - hello world
+                <a href="/2021/02/25/daily-20210225/" rel="prev" title="daily-20210225">
+                  <i class="fa fa-chevron-left"></i> daily-20210225
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/02/20/hexo-start/" rel="next" title="hexo个人博客备份">
-                  hexo个人博客备份 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -626,7 +603,7 @@ document.addEventListener('pjax:success', () => {
       quicklink.listen({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://sher-l.github.io/2021/02/19/hexo-search/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://sher-l.github.io/2021/02/26/bio-tools/',]
       });
       });
   </script>
